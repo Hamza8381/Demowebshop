@@ -1,5 +1,5 @@
-import { Register } from "../support/RegisterAuserPOM";
-import { login } from "../support/RegisterAuserPOM";
+import Register from "../support/RegisterAuserPOM";
+import login from "../support/Login";
 const Login = new login();
 const register = new Register();
 describe("Demo WebShop", () => {
@@ -10,7 +10,8 @@ describe("Demo WebShop", () => {
     register.Registerbutton();
     register.gendorSelector();
     register.addName();
-    register.addEmailPassword();
+    register.addEmail();
+    register.addPassword();
     register.clickRegisterButton();
     register.verifyRegistration();
   });

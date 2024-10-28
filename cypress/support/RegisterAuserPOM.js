@@ -3,8 +3,8 @@ import utilisFunction from "./utilisFunction";
 const utilis = new utilisFunction();
 const password = utilis.randomPassword();
 const email = utilis.randomEmail();
-const firstName = faker.name.firstName();
-const lastName = faker.name.lastName();
+const firstName = faker.person.firstName();
+const lastName = faker.person.lastName();
 class Register {
   Registerbutton() {
     cy.get(".ico-register").click();
@@ -16,8 +16,10 @@ class Register {
     cy.get("#FirstName").type(firstName);
     cy.get("#LastName").type(lastName);
   }
-  addEmailPassword() {
+  addEmail() {
     cy.get("#Email").type(email);
+  }
+  addPassword() {
     cy.get("#Password").type(password);
     cy.get("#ConfirmPassword").type(password);
   }
@@ -27,22 +29,9 @@ class Register {
   verifyRegistration() {
     cy.get("div").contains("Your registration completed").should("be.visible");
   }
-}
-class login {
-  loginButton() {
-    cy.get(".ico-login").click();
-  }
-  addEmail() {
-    cy.get("#Email").type(email);
-  }
-  addPassword() {
-    cy.get("#Password").type(password);
-  }
-  clickLoginButton() {
-    cy.get(".button-1.login-button").click();
-  }
-  veryfiyLogin() {
-    cy.get("a").contains("@gmail.com").should("be.visible");
+  getcredentials() {
+    return { email: email, password: password };
   }
 }
-export { Register, login };
+
+export default Register;
