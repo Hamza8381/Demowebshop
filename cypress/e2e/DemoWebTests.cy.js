@@ -1,5 +1,5 @@
 import Register from "../support/RegisterAuserPOM";
-import login from "../support/Login";
+import login from "../support/LoginRegisteredUser";
 const Login = new login();
 const register = new Register();
 describe("Demo WebShop", () => {
