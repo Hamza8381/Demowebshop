@@ -46,7 +46,6 @@ Cypress.Commands.add("Login", (email, password) => {
 });
 //-------------- Logout------------------//
 Cypress.Commands.add("logout", () => {
-  cy.get(".ico-logout").should("be.visible");
   cy.get(".ico-logout").click();
   cy.get(".ico-register").should("be.visible");
 });

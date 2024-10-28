@@ -23,4 +23,12 @@ describe("Demo WebShop", () => {
     Login.clickLoginButton();
     Login.veryfiyLogin();
   });
+  it("should login then Logout", () => {
+    Login.loginButton();
+    Login.addEmail();
+    Login.addPassword();
+    Login.clickLoginButton();
+    Login.veryfiyLogin();
+    cy.logout();
+  });
 });
