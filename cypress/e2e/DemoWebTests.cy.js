@@ -1,5 +1,6 @@
 import Register from "../support/RegisterAuserPOM";
 const register = new Register();
+
 describe("Demo WebShop", () => {
   it.only("Register a New User using POM", () => {
     cy.visit("https://demowebshop.tricentis.com/");
