@@ -1,11 +1,13 @@
-import Register from "../support/RegisterAuserPOM";
+import { Register } from "../support/RegisterAuserPOM";
+import { login } from "../support/RegisterAuserPOM";
+const Login = new login();
 const register = new Register();
 describe("Demo WebShop", () => {
   const BaseUrl = "https://demowebshop.tricentis.com/";
   beforeEach(() => {
     cy.visit(BaseUrl);
   });
-  it.only("Register a New User using POM", () => {
+  it("Register a New User using POM", () => {
     register.Registerbutton();
     register.gendorSelector();
     register.addName();
@@ -13,11 +15,19 @@ describe("Demo WebShop", () => {
     register.clickRegisterButton();
     cy.get("div").contains("Your registration completed").should("be.visible");
   });
-  it("Login Using Command", () => {
-    cy.Login("Johndoee1@gmail.com", "Hamza129");
+
+  it("Login a user with registered randomEmail/Password", () => {
+    Login.loginButton();
+    Login.addEmail();
+    Login.addPassword();
+    Login.clickLoginButton();
+    cy.get("a").contains("@gmail.com").should("be.visible");
   });
 });
 
+// it("Logout Using Command", () => {
+//   cy.logout();
+// });
 // cy.fixture("Registerdata").then((data) => {
 //   cy.Register(data).click();
 // });
