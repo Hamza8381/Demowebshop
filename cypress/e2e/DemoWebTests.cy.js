@@ -6,7 +6,12 @@ describe("Demo WebShop", () => {
     cy.visit(BaseUrl);
   });
   it.only("Register a New User using POM", () => {
-    register.RegisterAuser();
+    register.Registerbutton();
+    register.gendorSelector();
+    register.addName();
+    register.addEmailPassword();
+    register.clickRegisterButton();
+    cy.get("div").contains("Your registration completed").should("be.visible");
   });
   it("Login Using Command", () => {
     cy.Login("Johndoee1@gmail.com", "Hamza129");
@@ -15,4 +20,7 @@ describe("Demo WebShop", () => {
 
 // cy.fixture("Registerdata").then((data) => {
 //   cy.Register(data).click();
+// });
+// it("Logout Using Command", () => {
+//   cy.logout();
 // });
