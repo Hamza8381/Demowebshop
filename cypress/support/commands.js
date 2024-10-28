@@ -45,8 +45,8 @@ Cypress.Commands.add("Login", (email, password) => {
   cy.get("a").contains("Johndoee1@gmail.com").should("be.visible");
 });
 //-------------- Logout------------------//
-// cypress.Commands.add("logout", () => {
-//   cy.get(".ico-logout").should("be.visible");
-//   cy.get(".ico-logout").click();
-//   cy.get(".ico-register").should("be.visible");
-// });
+Cypress.Commands.add("logout", () => {
+  cy.get(".ico-logout").should("be.visible");
+  cy.get(".ico-logout").click();
+  cy.get(".ico-register").should("be.visible");
+});

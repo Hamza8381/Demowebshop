@@ -3,9 +3,8 @@ import { login } from "../support/RegisterAuserPOM";
 const Login = new login();
 const register = new Register();
 describe("Demo WebShop", () => {
-  const BaseUrl = "https://demowebshop.tricentis.com/";
   beforeEach(() => {
-    cy.visit(BaseUrl);
+    cy.visit("/");
   });
   it("Register a New User using POM", () => {
     register.Registerbutton();
@@ -25,8 +24,8 @@ describe("Demo WebShop", () => {
   });
 });
 
-// it("Logout Using Command", () => {
-//   cy.logout();
+// it.only("Logout Using Command", () => {
+//   cy.Login();
 // });
 // cy.fixture("Registerdata").then((data) => {
 //   cy.Register(data).click();
