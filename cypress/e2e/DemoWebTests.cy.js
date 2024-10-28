@@ -12,7 +12,7 @@ describe("Demo WebShop", () => {
     register.addName();
     register.addEmailPassword();
     register.clickRegisterButton();
-    cy.get("div").contains("Your registration completed").should("be.visible");
+    register.verifyRegistration();
   });
 
   it("Login a user with registered randomEmail/Password", () => {
@@ -20,16 +20,6 @@ describe("Demo WebShop", () => {
     Login.addEmail();
     Login.addPassword();
     Login.clickLoginButton();
-    cy.get("a").contains("@gmail.com").should("be.visible");
+    Login.veryfiyLogin();
   });
 });
-
-// it.only("Logout Using Command", () => {
-//   cy.Login();
-// });
-// cy.fixture("Registerdata").then((data) => {
-//   cy.Register(data).click();
-// });
-// it("Logout Using Command", () => {
-//   cy.logout();
-// });

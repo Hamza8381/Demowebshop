@@ -24,6 +24,9 @@ class Register {
   clickRegisterButton() {
     cy.get("#register-button").click();
   }
+  verifyRegistration() {
+    cy.get("div").contains("Your registration completed").should("be.visible");
+  }
 }
 class login {
   loginButton() {
@@ -37,6 +40,9 @@ class login {
   }
   clickLoginButton() {
     cy.get(".button-1.login-button").click();
+  }
+  veryfiyLogin() {
+    cy.get("a").contains("@gmail.com").should("be.visible");
   }
 }
 export { Register, login };
