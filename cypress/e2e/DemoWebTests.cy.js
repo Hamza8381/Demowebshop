@@ -32,7 +32,7 @@ describe("Demo WebShop", () => {
     Login.veryfiyLogin();
     cy.logout();
   });
-  it.only("Register a New User using POM", () => {
+  it("Register a New User using POM", () => {
     registeration.Registerbutton();
     registeration.gendorSelector();
     registeration.addName();
@@ -40,5 +40,8 @@ describe("Demo WebShop", () => {
     registeration.addPassword();
     registeration.clickRegisterButton();
     registeration.verifyRegistration();
+  });
+  it.only("Register a New User by calling single function", () => {
+    registeration.Registernewuser();
   });
 });

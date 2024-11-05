@@ -32,5 +32,16 @@ const registeration = {
   getcredentials: function () {
     return { email: email, password: password };
   },
+
+  Registernewuser: function () {
+    this.Registerbutton();
+    this.gendorSelector();
+    this.addName();
+    this.addEmail();
+    this.addPassword();
+    this.clickRegisterButton();
+    this.verifyRegistration();
+    this.getcredentials();
+  },
 };
 export default registeration;
