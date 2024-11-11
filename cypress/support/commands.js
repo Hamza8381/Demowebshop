@@ -36,13 +36,16 @@
 //   cy.get("#register-button").click();
 // });
 
-//------------Login / Logout--------------//
+//------------Login--------------//
 Cypress.Commands.add("Login", (email, password) => {
   cy.get(".ico-login").click();
   cy.get("#Email").type(email);
   cy.get("#Password").type(password);
   cy.get(".button-1.login-button").click();
   cy.get("a").contains("Johndoee1@gmail.com").should("be.visible");
+});
+//-------------- Logout------------------//
+Cypress.Commands.add("logout", () => {
   cy.get(".ico-logout").click();
   cy.get(".ico-register").should("be.visible");
 });
